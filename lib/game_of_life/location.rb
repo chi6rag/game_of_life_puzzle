@@ -12,4 +12,14 @@ class GameOfLife::Location
   end
   alias_method :eql?, :==
 
+  def adjacent
+    adjacent_locations = (-1..1).inject([]) do |locations, x_delta|
+      (-1..1).inject(locations) do |locations, y_delta|
+        locations << GameOfLife::Location.new(self.x - x_delta, self.y - y_delta) unless [x_delta, y_delta] == [0, 0]
+        locations
+      end
+    end
+    adjacent_locations
+  end
+
 end
