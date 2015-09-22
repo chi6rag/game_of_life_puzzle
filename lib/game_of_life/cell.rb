@@ -34,9 +34,8 @@ class GameOfLife::Cell
 	end
 
 	def next_generation neighbours
-		# @neighbours = neighbours
-    count = neighbours.inject(0){ |alive_count, n| n.alive? ? alive_count += 1 : alive_count }
-    if count <= 3 && count > 2
+    alive_neighbour_count = neighbours.inject(0){ |alive_count, n| n.alive? ? alive_count += 1 : alive_count }
+    if alive_neighbour_count <= 3 && alive_neighbour_count >= 2
       return GameOfLife::Cell.new
     else
       return GameOfLife::Cell.new(false)
