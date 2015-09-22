@@ -1,7 +1,7 @@
 class GameOfLife::Location
 	attr_accessor :x, :y
 
-  def initialize(x=0,y=0)
+  def initialize(x,y)
   	@x = x
   	@y = y
   end
