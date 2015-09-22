@@ -29,5 +29,6 @@ class GameOfLife::Generation
   end
 
   def draw(canvas, &block)
+    
   end
 end
