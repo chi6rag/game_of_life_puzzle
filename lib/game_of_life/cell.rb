@@ -22,4 +22,8 @@ class GameOfLife::Cell
 	def alive?
 		@alive
 	end
+
+	def next_generation next_generation
+		GameOfLife::Generation.new
+	end
 end
