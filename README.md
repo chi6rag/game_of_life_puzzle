@@ -24,8 +24,8 @@ Your task is to recreate the lost source code by reverse engineering the automat
 1. Follow the Setup instructions below to get the project to build and see all the failing specifications listed.
 2. Use the internet for research and do your own experiments to pass the specs one at a time.
 3. Keep saving your progress frequently (every 15-20 mins) using Git.
-4. Repeat until you get the full build with all 55 automated specifications passing or you run out of time. 
-5. Getting all 55 specifications to pass is not necessary, but is definitely a bonus.
+4. Repeat until you get the full build with all 34 automated specifications passing or you run out of time. 
+5. Getting all 34 specifications to pass is not necessary, but is definitely a bonus.
 
 ### Getting Setup
 
