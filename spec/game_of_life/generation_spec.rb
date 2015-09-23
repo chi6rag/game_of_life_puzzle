@@ -48,7 +48,7 @@ describe GameOfLife::Generation do
       canvas = double("canvas")
 
       expect(canvas).to receive(:draw_with_bounds).
-        with(GameOfLife::Location.new(-2, -10), GameOfLife::Location.new(7, 8)) do |&block|
+      with(GameOfLife::Location.new(-2, -10), GameOfLife::Location.new(7, 8)) do |&block|
         expect(block.call(GameOfLife::Location.new(-2, 3))).to eq(GameOfLife::Cell::ALIVE)
         expect(block.call(GameOfLife::Location.new(1, 1))).to eq(GameOfLife::Cell::DEAD)
       end
