@@ -16,29 +16,21 @@ class GameOfLife::Cell
 	end
 
 	def dead?
-    unless @neighbours.nil?
-      flag = true
-      @neighbours.each {|n| flag = false if n.alive? }
-      return flag
-    end
 		!@alive
 	end
 
 	def alive?
-    unless @neighbours.nil?
-      flag = false
-      @neighbours.each {|n| flag = true if n.alive? }
-      return flag
-    end
 		@alive
 	end
 
 	def next_generation neighbours
     alive_neighbour_count = neighbours.inject(0){ |alive_count, n| n.alive? ? alive_count += 1 : alive_count }
-    if alive_neighbour_count <= 3 && alive_neighbour_count >= 2
-      return GameOfLife::Cell.new
+    if self.alive?
+      return GameOfLife::Cell.new if(alive_neighbour_count.between?(2,3))
     else
-      return GameOfLife::Cell.new(false)
+      return GameOfLife::Cell.new if alive_neighbour_count == 3
     end
+    GameOfLife::Cell.new(false)
 	end
+
 end
